@@ -1,0 +1,24 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+  "Description" : "My First CloudForm",
+  "Resources" : {
+    "MattEC2cfcreated" : {
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "ImageId" : "ami-013be31976ca2c322",
+        "InstanceType" : "t2.micro",
+        "KeyName" : "EC2-4",
+        "BlockDeviceMappings" : [
+          {
+            "DeviceName" : "/dev/sdx",
+            "Ebs" : {
+              "VolumeType" : "gp2",
+              "DeleteOnTermination" : "true",
+              "VolumeSize" : "20"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

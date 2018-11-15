@@ -1,0 +1,25 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+  "Description" : "EC2_CloudForm_Win",
+  "Resources" : {
+    "MattEC2cfcreated" : {
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "ImageId" : "ami-050202fb72f001b47",
+        "InstanceType" : "t2.micro",
+        "SecurityGroupIds" : [ "DefaultVPC_RDP_SG" ],
+        "KeyName" : "EC2-4",
+        "BlockDeviceMappings" : [
+          {
+            "DeviceName" : "/dev/sdx",
+            "Ebs" : {
+              "VolumeType" : "gp2",
+              "DeleteOnTermination" : "true",
+              "VolumeSize" : "80"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
